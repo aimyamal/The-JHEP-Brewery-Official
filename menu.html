@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JHEP Brewery | Menu</title>
+<link rel="icon" type="image/png" href="JHEP_brewery.png">
+<style>
+body {
+    margin: 0;
+    font-family: "Times New Roman", serif;
+    background-color: #b56568;
+    color: #2e5150; /* Main text color */
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: center;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    padding: 14px 0;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+nav a {
+    margin: 0 22px;
+    text-decoration: none;
+    color: #000000; /* Black text */
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    transition: color 0.3s ease;
+}
+nav a:hover { color: #87b9bd; }
+
+/* Card style */
+.menu-section {
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+    margin: 50px auto;
+    max-width: 800px;
+    padding: 30px 25px;
+    border-radius: 22px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.menu-section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.25);
+}
+
+/* Full-card watermark */
+.menu-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: var(--watermark-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.18;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 22px;
+}
+
+/* Content overlay */
+.menu-content {
+    position: relative;
+    z-index: 1;
+}
+
+h1, h2 { text-align: center; }
+h2 { margin-top: 25px; }
+p { font-size: 18px; line-height: 1.6; margin: 6px 0; color: #2e5150; display: flex; align-items: center; }
+
+/* Blue accents for prices */
+.price { 
+    margin-left: auto; 
+    font-weight: bold; 
+    color: #87b9bd; 
+    transition: transform 0.2s ease, color 0.2s ease; 
+}
+p:hover .price { 
+    transform: scale(1.1); 
+    color: #bce0e3; 
+}
+
+/* Fade-in animation */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in.show { opacity: 1; transform: translateY(0); }
+
+/* Tooltip for descriptions */
+.menu-item {
+    position: relative;
+    cursor: pointer;
+}
+.menu-item::after {
+    content: attr(data-desc);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 125%;
+    background-color: rgba(46, 81, 80, 0.9);
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+    z-index: 2;
+}
+.menu-item:hover::after {
+    opacity: 1;
+    bottom: 150%;
+}
+
+/* Section dividers */
+.section-divider {
+    width: 60px;
+    height: 4px;
+    background-color: #87b9bd;
+    margin: 20px auto;
+    border-radius: 2px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<!-- Intro Card -->
+<div class="menu-section fade-in">
+    <div class="menu-content">
+        <h1>Our Menu</h1>
+        <p style="text-align:center;"><em>Simple, comforting food made with love</em></p>
+    </div>
+</div>
+
+<!-- Beverages -->
+<div class="menu-section fade-in" style="--watermark-image: url('coffee.png');">
+    <div class="menu-content">
+        <h2>☕ Beverages</h2>
+        <div class="section-divider"></div>
+
+        <h3>Hot</h3>
+        <p class="menu-item" data-desc="Classic South Indian filter coffee, rich and aromatic.">☕ Classic Filter Coffee <span class="price">₹20</span></p>
+        <p class="menu-item" data-desc="Strong and flavorful chai with spices.">🫖 Chai <span class="price">₹10</span></p>
+        <p class="menu-item" data-desc="Hot chocolate made with rich cocoa.">🍫 Hot Chocolate <span class="price">₹100</span></p>
+
+        <h3>Cold</h3>
+        <p class="menu-item" data-desc="Cold coffee, chilled and refreshing.">🧊 Cold Coffee <span class="price">₹40</span></p>
+        <p class="menu-item" data-desc="Boba tea with fruit, classic or matcha flavor.">🧋 Boba Tea <span class="price">₹100</span></p>
+        <p class="menu-item" data-desc="Refreshing virgin mojito with mint and lime.">🍹 Virgin Mojito <span class="price">₹60</span></p>
+        <p class="menu-item" data-desc="Freshly squeezed assorted fruit juices.">🍊 Assorted Fruit Juice <span class="price">₹30</span></p>
+        <p class="menu-item" data-desc="Blue Curacao mocktail, vibrant and tasty.">🔵 Blue Curacao <span class="price">₹90</span></p>
+        <p class="menu-item" data-desc="Milkshakes: Oreo, Strawberry, Chocolate, Vanilla.">🥤 Milkshakes <span class="price">₹80</span></p>
+        <p class="menu-item" data-desc="Lemonade: Regular, Sweet & Salt, or Masala.">🍋 Lemonade <span class="price">₹30</span></p>
+        <p class="menu-item" data-desc="Traditional buttermilk, light and refreshing.">🥛 Buttermilk <span class="price">₹30</span></p>
+        <p class="menu-item" data-desc="Classic lassi, sweet and creamy.">🥛 Lassi <span class="price">₹40</span></p>
+    </div>
+</div>
+
+<!-- Café Bites -->
+<div class="menu-section fade-in" style="--watermark-image: url('nuggies.png');">
+    <div class="menu-content">
+        <h2>🥐 Café Bites</h2>
+        <div class="section-divider"></div>
+
+        <h3>Starters</h3>
+        <p class="menu-item" data-desc="Crispy potato cheese shots.">🥔 Potato Cheese Shots <span class="price">₹40</span></p>
+        <p class="menu-item" data-desc="Garlic bread, toasted and flavorful.">🧄 Garlic Bread <span class="price">₹60</span></p>
+        <p class="menu-item" data-desc="Classic French fries, salted and crispy.">🍟 French Fries <span class="price">₹50</span></p>
+        <p class="menu-item" data-desc="Fresh Caesar salad with creamy dressing.">🥗 Caesar Salad <span class="price">₹70</span></p>
+        <p class="menu-item" data-desc="Paneer fried plain or spicy.">🧀 Paneer Fry <span class="price">₹40</span></p>
+
+        <h3>Mains</h3>
+        <p class="menu-item" data-desc="Maggi noodles: Plain, Veggie, Egg, Spicy, Special.">🍜 Maggi <span class="price">₹50</span></p>
+        <p class="menu-item" data-desc="Customizable sandwich with your choice of fillings.">🥪 Sandwich <span class="price">₹70</span></p>
+        <p class="menu-item" data-desc="Omelette: Plain, Cheese, or Special.">🥚 Omelette <span class="price">₹40</span></p>
+    </div>
+</div>
+
+<!-- Desserts -->
+<div class="menu-section fade-in" style="--watermark-image: url('muffins.png');">
+    <div class="menu-content">
+        <h2>🍰 Desserts</h2>
+        <div class="section-divider"></div>
+
+        <p class="menu-item" data-desc="Rich chocolate brownie, freshly baked.">🍫 Chocolate Brownie <span class="price">₹60</span></p>
+        <p class="menu-item" data-desc="Oreo cake, creamy and delicious.">🍪 Oreo Cake <span class="price">₹80</span></p>
+        <p class="menu-item" data-desc="Ice cream scoop, choose your flavor.">🍨 Ice Cream Scoop <span class="price">₹40</span></p>
+        <p class="menu-item" data-desc="Fresh fruit salad, healthy and tasty.">🍓 Fruit Salad <span class="price">₹60</span></p>
+        <p><strong>*Water is free*</strong></p>
+    </div>
+</div>
+
+<script>
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+
+</body>
+</html>
