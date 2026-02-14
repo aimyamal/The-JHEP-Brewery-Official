@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JHEP Brewery | Contact</title>
+<link rel="icon" type="image/png" href="JHEP_brewery.png">
+<style>
+body {
+    margin: 0;
+    font-family: "Times New Roman", serif;
+    background-color: #b3afd6;
+    color: #000000;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: center;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    padding: 14px 0;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+nav a {
+    margin: 0 22px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    transition: color 0.3s ease;
+}
+nav a:hover { color: #87b9bd; }
+
+/* Sections as cards */
+.section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px 25px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.25);
+}
+.section-content {
+    position: relative;
+    z-index: 1;
+}
+h1, h2 { text-align: center; }
+p { font-size: 18px; line-height: 1.7; margin: 10px 0; }
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="section">
+    <div class="section-content">
+        <h1>Contact Us</h1>
+        <h2>📍 Our Location</h2>
+        <p>We are located just outside the clubhouse (CH), making JHEP Brewery easy to find and perfect for meet-ups and relaxed hangouts.</p>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-content">
+        <h2>🏠 Address Details</h2>
+        <p>Ancy’s Flat: F-204</p>
+        <p>Shrithika’s Flat: C1-803</p>
+        <p>Saina’s Flat: A-501</p>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-content">
+        <h2>📞 Contact Number</h2>
+        <p>Phone: 9902740693</p>
+        <p>(Hours: 3:00 pm - 8:30 pm)</p>
+    </div>
+</div>
+
+</body>
+</html>
